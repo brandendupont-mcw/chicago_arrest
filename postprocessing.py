@@ -35,7 +35,7 @@ def get_arrest_data(PATH):
 def main():
     
     # get arrest data from chicago open data portal
-    ar = get_arrest_data(PATH)
+    ar = get_arrest_data(ARREST_DATA_PATH)
     
     #get arrest statute lookup table
     sl = pd.read_csv(ARREST_CROSSWALK_PATH)
