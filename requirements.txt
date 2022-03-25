@@ -1,5 +1,2 @@
 pandas
 numpy
-requests
-rtree
-geopandas
