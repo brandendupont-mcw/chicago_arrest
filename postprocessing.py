@@ -46,11 +46,17 @@ def main():
     #cast report race column to titlecase
     arl['race'] =arl['race'].str.title()
     
+    #convert arrest date
+    arl['arrest_date'] = pd.to_datetime(arl['arrest_date'])
+    
+    # subset to be greater than 2016
+    arl = arl[arl['arrest_date'].dt.year >= 2016]
+    
     # print crosswalk match rate
     print(f"Crosswalk match rate is {100*round(1 - arl['Statute'].isnull().sum() / arl.shape[0],4)}%")
     
     # save data
-    arl.to_csv("chicago_arrests.csv.gz", index=False,  compression='gzip')
+    arl.to_csv("chicago_arrests.csv", index=False,)
 
 
 
