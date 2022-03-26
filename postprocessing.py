@@ -50,7 +50,7 @@ def main():
     print(f"Crosswalk match rate is {100*round(1 - arl['Statute'].isnull().sum() / arl.shape[0],4)}%")
     
     # save data
-    arl.to_csv("chicago_arrests.csv", index=False)
+    arl.to_csv("chicago_arrests.csv.gz", index=False,  compression='gzip')
 
 
 
